@@ -60,6 +60,7 @@
             this.history_button.Size = new System.Drawing.Size(39, 35);
             this.history_button.TabIndex = 1;
             this.history_button.UseVisualStyleBackColor = true;
+            this.history_button.Click += new System.EventHandler(this.history_button_Click);
             // 
             // top_panel
             // 
@@ -123,7 +124,7 @@
             this.Controls.Add(this.home_button);
             this.Controls.Add(this.top_panel);
             this.Name = "Home";
-            this.Text = "Form1";
+            this.Text = "Home";
             this.top_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

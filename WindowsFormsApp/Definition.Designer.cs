@@ -53,6 +53,7 @@
             this.home_button.Text = "Home";
             this.home_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.home_button.UseVisualStyleBackColor = true;
+            this.home_button.Click += new System.EventHandler(this.home_button_Click);
             // 
             // history_button
             // 
@@ -62,6 +63,7 @@
             this.history_button.Size = new System.Drawing.Size(39, 35);
             this.history_button.TabIndex = 2;
             this.history_button.UseVisualStyleBackColor = true;
+            this.history_button.Click += new System.EventHandler(this.history_button_Click);
             // 
             // top_panel
             // 
