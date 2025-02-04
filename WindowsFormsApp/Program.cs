@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dictionary.Database;
 
 namespace WindowsFormsApp
 {
@@ -14,6 +15,12 @@ namespace WindowsFormsApp
         [STAThread]
         static void Main()
         {
+            Table.Serialize<FavoriteEntry>(new FavoriteEntry[] { new FavoriteEntry() {
+                word = "balls",
+                timeFavorited = DateTime.Now
+            } }, "history") ;
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Home());
