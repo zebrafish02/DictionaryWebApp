@@ -1,10 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms.VisualStyles;
 
 namespace Dictionary.Database
 {
     public class FavoriteEntry
     {
-        public string word { get; set; }
-        public DateTime timeFavorited { get; set; }
+        private static List<String> FavoriteWords = new List<String>();
+        
+
+        public static List<String> GetFavWords()
+        {
+            return FavoriteWords;
+        }
+
+        public static void AddFavWord(String word)
+        {
+            FavoriteWords.Add(word);
+        }
+
+        public static void RemoveFavWord(String word)
+        {
+            FavoriteWords.Remove(word);
+        }
     }
 }

@@ -15,10 +15,6 @@ namespace WindowsFormsApp
         [STAThread]
         static void Main()
         {
-            Table.Serialize<FavoriteEntry>(new FavoriteEntry[] { new FavoriteEntry() {
-                word = "balls",
-                timeFavorited = DateTime.Now
-            } }, "history") ;
 
 
             Application.EnableVisualStyles();
