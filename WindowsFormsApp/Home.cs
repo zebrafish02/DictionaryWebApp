@@ -14,6 +14,7 @@ namespace WindowsFormsApp
 {
     public partial class Home : Form
     {
+        private readonly DefinitionDatabase definitionDatabase;
         public Home()
         {
             InitializeComponent();
@@ -23,6 +24,8 @@ namespace WindowsFormsApp
             {
                 favorite_words_box.Text += favWords[i] + "       ";
             }
+
+            definitionDatabase = new DefinitionDatabase();
         }
 
         private void history_button_Click(object sender, EventArgs e)
@@ -32,6 +35,44 @@ namespace WindowsFormsApp
             hist1.ShowDialog();
             this.Close();
         }
+
+        private void search_button_Click(object sender, EventArgs e)
+        {
+            HistoryEntry.AddEntry(search_box.Text, DateTime.Now);
+            
+        }
+
+
+
+        public async Task SearchWord(string word)
+        {
+            try
+            {
+                var results = await definitionDatabase.GetDef(word);
+
+                foreach (var wordDef in results)
+                {
+                    Console.WriteLine($"\nDefinitions for: {wordDef.Word}");
+
+                    foreach (var meaning in wordDef.Meanings)
+                    {
+                        Console.WriteLine($"\nPart of Speech: {meaning.PartOfSpeech}");
+                        foreach (var def in meaning.Definitions)
+                        {
+                            Console.WriteLine($"Definition: {def.Text}");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error looking up word: {ex.Message}");
+            }
+        }
+
+
+
+
 
 
 
@@ -44,5 +85,7 @@ namespace WindowsFormsApp
         {
 
         }
+
+        
     }
 }

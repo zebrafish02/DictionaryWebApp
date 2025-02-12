@@ -35,8 +35,8 @@
             this.search_button = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
             this.favorite_words_panel = new System.Windows.Forms.Panel();
-            this.favorite_words_label = new System.Windows.Forms.TextBox();
             this.favorite_words_box = new System.Windows.Forms.TextBox();
+            this.favorite_words_label = new System.Windows.Forms.TextBox();
             this.top_panel.SuspendLayout();
             this.favorite_words_panel.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,7 @@
             this.search_button.Text = "Search";
             this.search_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.search_button.UseVisualStyleBackColor = false;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
             // search_box
             // 
@@ -106,6 +107,15 @@
             this.favorite_words_panel.TabIndex = 5;
             this.favorite_words_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.favorite_words_panel_Paint);
             // 
+            // favorite_words_box
+            // 
+            this.favorite_words_box.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.favorite_words_box.Location = new System.Drawing.Point(-1, -1);
+            this.favorite_words_box.Name = "favorite_words_box";
+            this.favorite_words_box.Size = new System.Drawing.Size(708, 46);
+            this.favorite_words_box.TabIndex = 0;
+            this.favorite_words_box.TextChanged += new System.EventHandler(this.favorite_words_box_TextChanged);
+            // 
             // favorite_words_label
             // 
             this.favorite_words_label.Enabled = false;
@@ -116,15 +126,6 @@
             this.favorite_words_label.TabIndex = 0;
             this.favorite_words_label.Text = "Favorite Words";
             this.favorite_words_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // favorite_words_box
-            // 
-            this.favorite_words_box.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.favorite_words_box.Location = new System.Drawing.Point(-1, -1);
-            this.favorite_words_box.Name = "favorite_words_box";
-            this.favorite_words_box.Size = new System.Drawing.Size(708, 46);
-            this.favorite_words_box.TabIndex = 0;
-            this.favorite_words_box.TextChanged += new System.EventHandler(this.favorite_words_box_TextChanged);
             // 
             // Home
             // 

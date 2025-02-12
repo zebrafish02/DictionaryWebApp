@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dictionary.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace WindowsFormsApp
         public History()
         {
             InitializeComponent();
+            loadHist();
         }
 
         private void home_button_Click(object sender, EventArgs e)
@@ -23,6 +25,21 @@ namespace WindowsFormsApp
             this.Hide();
             home1.ShowDialog();
             this.Close();
+        }
+
+        private void clear_hist_button_Click(object sender, EventArgs e)
+        {
+            HistoryEntry.ClearHist();
+            history_box.Clear();
+        }
+
+        private void loadHist()
+        {
+            Dictionary<string, DateTime> hist = HistoryEntry.GetHist();
+            foreach (string word in hist.Keys)
+            {
+                history_box.Text += word + "   " + hist[word];
+            }
         }
     }
 }

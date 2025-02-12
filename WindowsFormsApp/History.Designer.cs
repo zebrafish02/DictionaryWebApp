@@ -32,8 +32,8 @@
             this.home_button = new System.Windows.Forms.Button();
             this.history_button = new System.Windows.Forms.Button();
             this.top_panel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.history_box = new System.Windows.Forms.TextBox();
+            this.clear_hist_button = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,33 +69,34 @@
             this.top_panel.Size = new System.Drawing.Size(799, 62);
             this.top_panel.TabIndex = 3;
             // 
-            // textBox1
+            // history_box
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(37, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(720, 22);
-            this.textBox1.TabIndex = 4;
+            this.history_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.history_box.Enabled = false;
+            this.history_box.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.history_box.Location = new System.Drawing.Point(37, 98);
+            this.history_box.Name = "history_box";
+            this.history_box.Size = new System.Drawing.Size(720, 22);
+            this.history_box.TabIndex = 4;
             // 
-            // button1
+            // clear_hist_button
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(24, 514);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Clear History";
-            this.button1.UseVisualStyleBackColor = true;
+            this.clear_hist_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_hist_button.Location = new System.Drawing.Point(24, 514);
+            this.clear_hist_button.Name = "clear_hist_button";
+            this.clear_hist_button.Size = new System.Drawing.Size(75, 23);
+            this.clear_hist_button.TabIndex = 5;
+            this.clear_hist_button.Text = "Clear History";
+            this.clear_hist_button.UseVisualStyleBackColor = true;
+            this.clear_hist_button.Click += new System.EventHandler(this.clear_hist_button_Click);
             // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.clear_hist_button);
+            this.Controls.Add(this.history_box);
             this.Controls.Add(this.home_button);
             this.Controls.Add(this.top_panel);
             this.Name = "History";
@@ -111,7 +112,7 @@
         private System.Windows.Forms.Button home_button;
         private System.Windows.Forms.Button history_button;
         private System.Windows.Forms.Panel top_panel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox history_box;
+        private System.Windows.Forms.Button clear_hist_button;
     }
 }
