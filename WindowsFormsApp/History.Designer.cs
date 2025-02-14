@@ -75,8 +75,9 @@
             this.history_box.Enabled = false;
             this.history_box.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.history_box.Location = new System.Drawing.Point(37, 98);
+            this.history_box.Multiline = true;
             this.history_box.Name = "history_box";
-            this.history_box.Size = new System.Drawing.Size(720, 22);
+            this.history_box.Size = new System.Drawing.Size(720, 394);
             this.history_box.TabIndex = 4;
             // 
             // clear_hist_button

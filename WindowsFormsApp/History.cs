@@ -38,7 +38,7 @@ namespace WindowsFormsApp
             Dictionary<string, DateTime> hist = HistoryEntry.GetHist();
             foreach (string word in hist.Keys)
             {
-                history_box.Text += word + "   " + hist[word];
+                history_box.Text += word + "     " + hist[word] + "\r\n";
             }
         }
     }

@@ -109,10 +109,12 @@
             // 
             // favorite_words_box
             // 
-            this.favorite_words_box.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.favorite_words_box.Enabled = false;
+            this.favorite_words_box.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.favorite_words_box.Location = new System.Drawing.Point(-1, -1);
+            this.favorite_words_box.Multiline = true;
             this.favorite_words_box.Name = "favorite_words_box";
-            this.favorite_words_box.Size = new System.Drawing.Size(708, 46);
+            this.favorite_words_box.Size = new System.Drawing.Size(708, 269);
             this.favorite_words_box.TabIndex = 0;
             this.favorite_words_box.TextChanged += new System.EventHandler(this.favorite_words_box_TextChanged);
             // 

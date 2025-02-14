@@ -96,6 +96,7 @@
             this.search_button.Text = "Search";
             this.search_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.search_button.UseVisualStyleBackColor = false;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
             // search_box
             // 
@@ -123,6 +124,7 @@
             this.favorite_button.Size = new System.Drawing.Size(34, 34);
             this.favorite_button.TabIndex = 7;
             this.favorite_button.UseVisualStyleBackColor = true;
+            this.favorite_button.Click += new System.EventHandler(this.favorite_button_Click);
             // 
             // definition_box
             // 
@@ -132,8 +134,9 @@
             this.definition_box.ForeColor = System.Drawing.SystemColors.WindowText;
             this.definition_box.Location = new System.Drawing.Point(41, 211);
             this.definition_box.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.definition_box.Multiline = true;
             this.definition_box.Name = "definition_box";
-            this.definition_box.Size = new System.Drawing.Size(708, 22);
+            this.definition_box.Size = new System.Drawing.Size(708, 307);
             this.definition_box.TabIndex = 8;
             // 
             // Definition

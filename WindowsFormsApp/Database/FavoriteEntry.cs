@@ -23,5 +23,10 @@ namespace Dictionary.Database
         {
             FavoriteWords.Remove(word);
         }
+
+        public static bool ContainsWord(String word)
+        {
+            return (FavoriteWords.Contains(word));
+        }
     }
 }
