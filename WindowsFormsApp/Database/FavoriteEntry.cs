@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 namespace Dictionary.Database
@@ -16,7 +17,19 @@ namespace Dictionary.Database
 
         public static void AddFavWord(String word)
         {
-            FavoriteWords.Add(word);
+            if (FavoriteWords.Count >= 12)
+            {
+                //stack overflow
+                MessageBox.Show(
+                "You can only favorite up to 12 words!",
+                "Maximum Favorites Reached",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+                );
+            } else
+            {
+                FavoriteWords.Add(word);
+            }
         }
 
         public static void RemoveFavWord(String word)

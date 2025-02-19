@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp
+﻿using System.Windows.Forms;
+
+namespace WindowsFormsApp
 {
     partial class Home
     {
@@ -91,11 +93,13 @@
             // 
             // search_box
             // 
+            this.search_box.AcceptsReturn = true;
             this.search_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_box.Location = new System.Drawing.Point(160, 103);
             this.search_box.Name = "search_box";
             this.search_box.Size = new System.Drawing.Size(589, 32);
             this.search_box.TabIndex = 4;
+            this.search_box.TextChanged += new System.EventHandler(this.search_box_TextChanged);
             // 
             // favorite_words_panel
             // 

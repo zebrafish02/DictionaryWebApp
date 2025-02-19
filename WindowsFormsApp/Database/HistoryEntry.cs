@@ -8,21 +8,29 @@ namespace Dictionary.Database
 {
     public class HistoryEntry
     {
-        private static Dictionary<string, DateTime> hist = new Dictionary<string, DateTime>();
+        private static List<string> words = new List<string>();
+        private static List<DateTime> dateTimes = new List<DateTime>();
 
-        public static Dictionary<string, DateTime> GetHist()
+        public static List<string> GetWords()
         {
-            return hist;
+            return words;
+        }
+
+        public static List<DateTime> GetDateTimes()
+        {
+            return dateTimes;
         }
 
         public static void AddEntry(string word, DateTime date)
         {
-            hist.Add(word, date);
+            words.Add(word);
+            dateTimes.Add(date);
         }
 
         public static void ClearHist()
         {
-            hist.Clear();
+            words.Clear();
+            dateTimes.Clear();
         }
     }
 }

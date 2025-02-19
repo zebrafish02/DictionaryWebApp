@@ -23,6 +23,13 @@ namespace WindowsFormsApp
             definitionDatabase = new DefinitionDatabase();
             SearchWord(word);
             defword = word;
+            if (FavoriteEntry.ContainsWord(word))
+            {
+                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartFilled.png");
+            } else
+            {
+                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");
+            }
         }
 
         private void home_button_Click(object sender, EventArgs e)
@@ -55,11 +62,12 @@ namespace WindowsFormsApp
             if (!FavoriteEntry.ContainsWord(defword))
             {
                 FavoriteEntry.AddFavWord(defword);
-                //Bitmap b = new Bitmap(@"C:\_Students\Liu\heartFilled.png");
-                //favorite_button.Image = b;
+                //image changing from stack overflow
+                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartFilled.png");
             } else
             {
                 FavoriteEntry.RemoveFavWord(defword);
+                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");
             }
             
         }

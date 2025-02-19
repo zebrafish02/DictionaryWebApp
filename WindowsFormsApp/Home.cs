@@ -45,6 +45,14 @@ namespace WindowsFormsApp
 
         }
 
+        private void search_box_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search_button_Click(this, new EventArgs());
+            }
+        }
+
 
 
 
@@ -61,6 +69,9 @@ namespace WindowsFormsApp
 
         }
 
-        
+        private void search_box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

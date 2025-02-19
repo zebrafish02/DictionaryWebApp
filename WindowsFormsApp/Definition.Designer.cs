@@ -136,6 +136,7 @@
             this.definition_box.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.definition_box.Multiline = true;
             this.definition_box.Name = "definition_box";
+            this.definition_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.definition_box.Size = new System.Drawing.Size(708, 307);
             this.definition_box.TabIndex = 8;
             // 
