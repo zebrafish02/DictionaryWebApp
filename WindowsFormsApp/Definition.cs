@@ -30,6 +30,8 @@ namespace WindowsFormsApp
             {
                 favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");
             }
+
+
         }
 
         private void home_button_Click(object sender, EventArgs e)
@@ -86,7 +88,7 @@ namespace WindowsFormsApp
 
                     foreach (var meaning in wordDef.Meanings)
                     {
-                        definition_box.Text +=($"\r\n({meaning.PartOfSpeech}) ");
+                        definition_box.Text +=($"\r\n \r\n ({meaning.PartOfSpeech}) \r\n");
                         foreach (var def in meaning.Definitions)
                         {
                             definition_box.Text += ($"\r\n{def.Text}");
@@ -100,6 +102,9 @@ namespace WindowsFormsApp
             }
         }
 
-        
+        private void definition_scroll_bar_Scroll(object sender, ScrollEventArgs e)
+        {
+            
+        }
     }
 }
