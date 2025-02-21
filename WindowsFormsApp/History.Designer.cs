@@ -34,6 +34,7 @@
             this.top_panel = new System.Windows.Forms.Panel();
             this.history_box = new System.Windows.Forms.TextBox();
             this.clear_hist_button = new System.Windows.Forms.Button();
+            this.light_dark_mode_button = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,11 +92,21 @@
             this.clear_hist_button.UseVisualStyleBackColor = true;
             this.clear_hist_button.Click += new System.EventHandler(this.clear_hist_button_Click);
             // 
+            // light_dark_mode_button
+            // 
+            this.light_dark_mode_button.Image = ((System.Drawing.Image)(resources.GetObject("light_dark_mode_button.Image")));
+            this.light_dark_mode_button.Location = new System.Drawing.Point(712, 515);
+            this.light_dark_mode_button.Name = "light_dark_mode_button";
+            this.light_dark_mode_button.Size = new System.Drawing.Size(60, 34);
+            this.light_dark_mode_button.TabIndex = 10;
+            this.light_dark_mode_button.UseVisualStyleBackColor = true;
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.light_dark_mode_button);
             this.Controls.Add(this.clear_hist_button);
             this.Controls.Add(this.history_box);
             this.Controls.Add(this.home_button);
@@ -115,5 +126,6 @@
         private System.Windows.Forms.Panel top_panel;
         private System.Windows.Forms.TextBox history_box;
         private System.Windows.Forms.Button clear_hist_button;
+        private System.Windows.Forms.Button light_dark_mode_button;
     }
 }

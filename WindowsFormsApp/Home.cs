@@ -24,6 +24,17 @@ namespace WindowsFormsApp
                 favorite_words_box.Text += favWords[i] + "       ";
             }
 
+            if (LightDarkModeSwitcher.GetIsLightMode())
+            {
+                this.BackColor = Color.FromArgb(245, 245, 245);
+                top_panel.BackColor = Color.FromArgb(180, 180, 180);
+                favorite_words_label.BackColor = Color.FromArgb(230, 230, 230);
+                search_button.BackColor = Color.FromArgb(180, 180, 180);
+                search_box.BackColor = Color.FromArgb(255, 255, 255);
+                favorite_words_box.BackColor = Color.FromArgb(255, 255, 255);
+                //light_dark_mode_button.Image = 
+            }
+
             
         }
 
@@ -54,7 +65,10 @@ namespace WindowsFormsApp
         }
 
 
+        private void light_dark_mode_button_Click(object sender, EventArgs e)
+        {
 
+        }
 
 
 
@@ -73,5 +87,7 @@ namespace WindowsFormsApp
         {
 
         }
+
+        
     }
 }

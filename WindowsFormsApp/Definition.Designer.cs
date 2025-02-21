@@ -38,6 +38,7 @@
             this.search_box = new System.Windows.Forms.TextBox();
             this.word_box = new System.Windows.Forms.TextBox();
             this.favorite_button = new System.Windows.Forms.Button();
+            this.light_dark_mode_button = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,11 +141,21 @@
             this.favorite_button.UseVisualStyleBackColor = true;
             this.favorite_button.Click += new System.EventHandler(this.favorite_button_Click);
             // 
+            // light_dark_mode_button
+            // 
+            this.light_dark_mode_button.Image = ((System.Drawing.Image)(resources.GetObject("light_dark_mode_button.Image")));
+            this.light_dark_mode_button.Location = new System.Drawing.Point(712, 515);
+            this.light_dark_mode_button.Name = "light_dark_mode_button";
+            this.light_dark_mode_button.Size = new System.Drawing.Size(60, 34);
+            this.light_dark_mode_button.TabIndex = 9;
+            this.light_dark_mode_button.UseVisualStyleBackColor = true;
+            // 
             // Definition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.light_dark_mode_button);
             this.Controls.Add(this.favorite_button);
             this.Controls.Add(this.definition_box);
             this.Controls.Add(this.word_box);
@@ -172,5 +183,6 @@
         private System.Windows.Forms.TextBox word_box;
         private System.Windows.Forms.Button favorite_button;
         private System.Windows.Forms.TextBox definition_box;
+        private System.Windows.Forms.Button light_dark_mode_button;
     }
 }

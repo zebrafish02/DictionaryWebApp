@@ -39,6 +39,7 @@ namespace WindowsFormsApp
             this.favorite_words_panel = new System.Windows.Forms.Panel();
             this.favorite_words_box = new System.Windows.Forms.TextBox();
             this.favorite_words_label = new System.Windows.Forms.TextBox();
+            this.light_dark_mode_button = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
             this.favorite_words_panel.SuspendLayout();
             this.SuspendLayout();
@@ -128,16 +129,28 @@ namespace WindowsFormsApp
             this.favorite_words_label.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.favorite_words_label.Location = new System.Drawing.Point(41, 162);
             this.favorite_words_label.Name = "favorite_words_label";
+            this.favorite_words_label.ReadOnly = true;
             this.favorite_words_label.Size = new System.Drawing.Size(708, 34);
             this.favorite_words_label.TabIndex = 0;
             this.favorite_words_label.Text = "Favorite Words";
             this.favorite_words_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // light_dark_mode_button
+            // 
+            this.light_dark_mode_button.Image = ((System.Drawing.Image)(resources.GetObject("light_dark_mode_button.Image")));
+            this.light_dark_mode_button.Location = new System.Drawing.Point(712, 515);
+            this.light_dark_mode_button.Name = "light_dark_mode_button";
+            this.light_dark_mode_button.Size = new System.Drawing.Size(60, 34);
+            this.light_dark_mode_button.TabIndex = 6;
+            this.light_dark_mode_button.UseVisualStyleBackColor = true;
+            this.light_dark_mode_button.Click += new System.EventHandler(this.light_dark_mode_button_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.light_dark_mode_button);
             this.Controls.Add(this.favorite_words_label);
             this.Controls.Add(this.favorite_words_panel);
             this.Controls.Add(this.search_box);
@@ -164,6 +177,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Panel favorite_words_panel;
         private System.Windows.Forms.TextBox favorite_words_label;
         private System.Windows.Forms.TextBox favorite_words_box;
+        private Button light_dark_mode_button;
     }
 }
 

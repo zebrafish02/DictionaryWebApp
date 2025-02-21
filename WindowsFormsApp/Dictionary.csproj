@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Database\DefinitionDatabase.cs" />
     <Compile Include="Database\HistoryEntry.cs" />
+    <Compile Include="Database\LightDarkModeSwitcher.cs" />
     <Compile Include="Definition.cs">
       <SubType>Form</SubType>
     </Compile>
