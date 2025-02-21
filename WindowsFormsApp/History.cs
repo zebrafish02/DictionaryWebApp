@@ -16,7 +16,8 @@ namespace WindowsFormsApp
         public History()
         {
             InitializeComponent();
-            loadHist();
+            LoadHist();
+            LoadColors();
         }
 
         private void home_button_Click(object sender, EventArgs e)
@@ -33,7 +34,27 @@ namespace WindowsFormsApp
             history_box.Clear();
         }
 
-        private void loadHist()
+        private void LoadColors()
+        {
+            if (LightDarkModeSwitcher.GetIsLightMode())
+            {
+                this.BackColor = Color.FromArgb(245, 245, 245);
+                top_panel.BackColor = Color.FromArgb(180, 180, 180);
+                history_box.BackColor = Color.FromArgb(245, 245, 245);
+                history_box.ForeColor = Color.FromArgb(0, 0, 0);
+                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\lightmode.png");
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(120, 120, 120);
+                top_panel.BackColor = Color.FromArgb(60, 60, 60);
+                history_box.BackColor = Color.FromArgb(120, 120, 120);
+                history_box.ForeColor = Color.FromArgb(255, 255, 255);
+                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\darkmode.png");
+            }
+        }
+
+        private void LoadHist()
         {
             //Dictionary<string, DateTime> hist = HistoryEntry.GetHist();
             List<string> words = HistoryEntry.GetWords();
@@ -46,6 +67,12 @@ namespace WindowsFormsApp
             {
                 history_box.Text += words[i] + "      " + dateTimes[i] + "\r\n";
             }
+        }
+
+        private void light_dark_mode_button_Click(object sender, EventArgs e)
+        {
+            LightDarkModeSwitcher.ToggleMode();
+            LoadColors();
         }
     }
 }

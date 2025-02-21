@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace WindowsFormsApp
             {
                 favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");
             }
-
+            LoadColors();
 
         }
 
@@ -102,9 +103,41 @@ namespace WindowsFormsApp
             }
         }
 
+        private void LoadColors()
+        {
+            if (LightDarkModeSwitcher.GetIsLightMode())
+            {
+                this.BackColor = Color.FromArgb(245, 245, 245);
+                top_panel.BackColor = Color.FromArgb(180, 180, 180);
+                search_box.BackColor = Color.FromArgb(255, 255, 255);
+                word_box.BackColor = Color.FromArgb(255, 255, 255);
+                word_box.ForeColor = Color.FromArgb(0, 0, 0);
+                definition_box.BackColor = Color.FromArgb(245, 245, 245);
+                definition_box.ForeColor = Color.FromArgb(0, 0, 0);
+                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\lightmode.png");
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(120, 120, 120);
+                top_panel.BackColor = Color.FromArgb(60, 60, 60);
+                search_box.BackColor = Color.FromArgb(100, 100, 100);
+                word_box.BackColor = Color.FromArgb(160, 160, 160);
+                word_box.ForeColor = Color.FromArgb(255, 255, 255);
+                definition_box.BackColor = Color.FromArgb(160, 160, 160);
+                definition_box.ForeColor = Color.FromArgb(255, 255, 255);
+                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\darkmode.png");
+            }
+        }
+
         private void definition_scroll_bar_Scroll(object sender, ScrollEventArgs e)
         {
             
+        }
+
+        private void light_dark_mode_button_Click(object sender, EventArgs e)
+        {
+            LightDarkModeSwitcher.ToggleMode();
+            LoadColors();
         }
     }
 }

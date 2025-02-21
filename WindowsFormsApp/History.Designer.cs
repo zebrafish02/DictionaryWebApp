@@ -73,11 +73,11 @@
             // history_box
             // 
             this.history_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.history_box.Enabled = false;
             this.history_box.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.history_box.Location = new System.Drawing.Point(37, 98);
             this.history_box.Multiline = true;
             this.history_box.Name = "history_box";
+            this.history_box.ReadOnly = true;
             this.history_box.Size = new System.Drawing.Size(720, 394);
             this.history_box.TabIndex = 4;
             // 
@@ -100,6 +100,7 @@
             this.light_dark_mode_button.Size = new System.Drawing.Size(60, 34);
             this.light_dark_mode_button.TabIndex = 10;
             this.light_dark_mode_button.UseVisualStyleBackColor = true;
+            this.light_dark_mode_button.Click += new System.EventHandler(this.light_dark_mode_button_Click);
             // 
             // History
             // 

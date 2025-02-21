@@ -127,9 +127,9 @@ namespace WindowsFormsApp
             // 
             this.favorite_words_label.Enabled = false;
             this.favorite_words_label.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.favorite_words_label.ForeColor = System.Drawing.SystemColors.WindowText;
             this.favorite_words_label.Location = new System.Drawing.Point(41, 162);
             this.favorite_words_label.Name = "favorite_words_label";
-            this.favorite_words_label.ReadOnly = true;
             this.favorite_words_label.Size = new System.Drawing.Size(708, 34);
             this.favorite_words_label.TabIndex = 0;
             this.favorite_words_label.Text = "Favorite Words";

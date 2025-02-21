@@ -24,18 +24,9 @@ namespace WindowsFormsApp
                 favorite_words_box.Text += favWords[i] + "       ";
             }
 
-            if (LightDarkModeSwitcher.GetIsLightMode())
-            {
-                this.BackColor = Color.FromArgb(245, 245, 245);
-                top_panel.BackColor = Color.FromArgb(180, 180, 180);
-                favorite_words_label.BackColor = Color.FromArgb(230, 230, 230);
-                search_button.BackColor = Color.FromArgb(180, 180, 180);
-                search_box.BackColor = Color.FromArgb(255, 255, 255);
-                favorite_words_box.BackColor = Color.FromArgb(255, 255, 255);
-                //light_dark_mode_button.Image = 
-            }
+            LoadColors();
 
-            
+
         }
 
         private void history_button_Click(object sender, EventArgs e)
@@ -67,7 +58,31 @@ namespace WindowsFormsApp
 
         private void light_dark_mode_button_Click(object sender, EventArgs e)
         {
+            LightDarkModeSwitcher.ToggleMode();
+            LoadColors();
+        }
 
+        private void LoadColors()
+        {
+            if (LightDarkModeSwitcher.GetIsLightMode())
+            {
+                this.BackColor = Color.FromArgb(245, 245, 245);
+                top_panel.BackColor = Color.FromArgb(180, 180, 180);
+                favorite_words_label.BackColor = Color.FromArgb(230, 230, 230);
+                favorite_words_label.ForeColor = Color.FromArgb(0, 0, 0);
+                search_box.BackColor = Color.FromArgb(255, 255, 255);
+                favorite_words_box.BackColor = Color.FromArgb(255, 255, 255);
+                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\lightmode.png");
+            } else
+            {
+                this.BackColor = Color.FromArgb(120, 120, 120);
+                top_panel.BackColor = Color.FromArgb(60, 60, 60);
+                favorite_words_label.BackColor = Color.FromArgb(60, 60, 60);
+                favorite_words_label.ForeColor = Color.FromArgb(255, 255, 255);
+                search_box.BackColor = Color.FromArgb(160, 160, 160);
+                favorite_words_box.BackColor = Color.FromArgb(160, 160, 160);
+                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\darkmode.png");
+            }
         }
 
 

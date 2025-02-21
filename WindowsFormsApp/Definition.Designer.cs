@@ -123,11 +123,12 @@
             // 
             // word_box
             // 
+            this.word_box.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.word_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.word_box.Enabled = false;
             this.word_box.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.word_box.Location = new System.Drawing.Point(41, 164);
             this.word_box.Name = "word_box";
+            this.word_box.ReadOnly = true;
             this.word_box.Size = new System.Drawing.Size(708, 28);
             this.word_box.TabIndex = 6;
             // 
@@ -149,6 +150,7 @@
             this.light_dark_mode_button.Size = new System.Drawing.Size(60, 34);
             this.light_dark_mode_button.TabIndex = 9;
             this.light_dark_mode_button.UseVisualStyleBackColor = true;
+            this.light_dark_mode_button.Click += new System.EventHandler(this.light_dark_mode_button_Click);
             // 
             // Definition
             // 
