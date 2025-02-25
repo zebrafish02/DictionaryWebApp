@@ -26,7 +26,7 @@ namespace WindowsFormsApp
             SearchWord(word);
             defword = word;
             if (FavoriteEntry.ContainsWord(word))
-            {
+            {                
                 favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartFilled.png");
             } else
             {
@@ -71,12 +71,17 @@ namespace WindowsFormsApp
 
         private void favorite_button_Click(object sender, EventArgs e)
         {
-            if (!FavoriteEntry.ContainsWord(defword))
+            if (!FavoriteEntry.ContainsWord(defword) && FavoriteEntry.Count() < 12)
             {
                 FavoriteEntry.AddFavWord(defword);
                 //image changing from stack overflow
                 favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartFilled.png");
-            } else
+            }
+            else if (FavoriteEntry.Count() >= 12)
+            {
+                FavoriteEntry.ErrorMessage();
+            }
+            else
             {
                 FavoriteEntry.RemoveFavWord(defword);
                 favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");

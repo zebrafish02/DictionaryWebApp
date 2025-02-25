@@ -78,6 +78,7 @@
             this.history_box.Multiline = true;
             this.history_box.Name = "history_box";
             this.history_box.ReadOnly = true;
+            this.history_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.history_box.Size = new System.Drawing.Size(720, 394);
             this.history_box.TabIndex = 4;
             // 

@@ -127,8 +127,9 @@ namespace WindowsFormsApp
         {
             Button clickedButton = sender as Button;
             if (clickedButton != null)
-            {
+            {                
                 string word = clickedButton.Tag.ToString();
+                HistoryEntry.AddEntry(word, DateTime.Now);
                 Definition def1 = new Definition(word);
                 Hide();
                 def1.ShowDialog();

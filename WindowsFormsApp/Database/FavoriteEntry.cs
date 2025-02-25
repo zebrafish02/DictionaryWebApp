@@ -17,16 +17,7 @@ namespace Dictionary.Database
 
         public static void AddFavWord(String word)
         {
-            if (FavoriteWords.Count >= 12)
-            {
-                //stack overflow
-                MessageBox.Show(
-                "You can only favorite up to 12 words!",
-                "Maximum Favorites Reached",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-                );
-            } else
+            if (FavoriteWords.Count < 12)
             {
                 FavoriteWords.Add(word);
             }
@@ -40,6 +31,21 @@ namespace Dictionary.Database
         public static bool ContainsWord(String word)
         {
             return (FavoriteWords.Contains(word));
+        }
+
+        public static int Count()
+        {
+            return FavoriteWords.Count;
+        }
+
+        public static void ErrorMessage()
+        {
+            MessageBox.Show(
+                "You can only favorite up to 12 words!",
+                "Maximum Favorites Reached",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+                );
         }
     }
 }
