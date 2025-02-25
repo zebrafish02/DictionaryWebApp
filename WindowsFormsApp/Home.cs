@@ -17,12 +17,52 @@ namespace WindowsFormsApp
         public Home()
         {
             InitializeComponent();
+            this.search_box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_box_KeyDown);
 
             List<string> favWords = FavoriteEntry.GetFavWords();
-            for (int i = 0; i < favWords.Count; i++)
+            //for (int i = 0; i < favWords.Count; i++)
+            //{
+            //    favorite_words_box.Text += favWords[i] + "       ";
+            //}
+
+            favorite_words_panel.Controls.Clear();
+
+
+            int buttonWidth = 150;
+            int buttonHeight = 30;
+            int xPos = 10;
+            int yPos = 10;
+            int horizontalSpacing = 20;
+            int verticalSpacing = 15;
+            int buttonsPerRow = favorite_words_panel.Width / (buttonWidth + horizontalSpacing);
+            int count = 0;
+            foreach (string word in favWords)
             {
-                favorite_words_box.Text += favWords[i] + "       ";
+                Button wordButton = new Button();
+                wordButton.Text = word;
+                wordButton.Width = buttonWidth;
+                wordButton.Height = buttonHeight;
+                wordButton.Location = new Point(xPos, yPos);
+                wordButton.Margin = new Padding(5);
+                wordButton.Tag = word;
+                wordButton.Show();
+
+                wordButton.Click += FavoriteWordButton_Click;
+
+                favorite_words_panel.Controls.Add(wordButton);
+
+                count++;
+                if (count % buttonsPerRow == 0)
+                {
+                    xPos = 10;
+                    yPos += buttonHeight + verticalSpacing;
+                }
+                else
+                {
+                    xPos += buttonWidth + horizontalSpacing;
+                }
             }
+
 
             LoadColors();
 
@@ -71,7 +111,6 @@ namespace WindowsFormsApp
                 favorite_words_label.BackColor = Color.FromArgb(230, 230, 230);
                 favorite_words_label.ForeColor = Color.FromArgb(0, 0, 0);
                 search_box.BackColor = Color.FromArgb(255, 255, 255);
-                favorite_words_box.BackColor = Color.FromArgb(255, 255, 255);
                 light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\lightmode.png");
             } else
             {
@@ -80,11 +119,26 @@ namespace WindowsFormsApp
                 favorite_words_label.BackColor = Color.FromArgb(60, 60, 60);
                 favorite_words_label.ForeColor = Color.FromArgb(255, 255, 255);
                 search_box.BackColor = Color.FromArgb(160, 160, 160);
-                favorite_words_box.BackColor = Color.FromArgb(160, 160, 160);
                 light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\darkmode.png");
             }
         }
 
+        private void FavoriteWordButton_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            if (clickedButton != null)
+            {
+                string word = clickedButton.Tag.ToString();
+                Definition def1 = new Definition(word);
+                Hide();
+                def1.ShowDialog();
+                Close();
+            }
+
+            
+        }
+
+        
 
 
 

@@ -21,6 +21,7 @@ namespace WindowsFormsApp
         public Definition(string word)
         {
             InitializeComponent();
+            this.search_box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_box_KeyDown);
             definitionDatabase = new DefinitionDatabase();
             SearchWord(word);
             defword = word;
@@ -58,6 +59,14 @@ namespace WindowsFormsApp
             Hide();
             def1.ShowDialog();
             Close();
+        }
+
+        private void search_box_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search_button_Click(this, new EventArgs());
+            }
         }
 
         private void favorite_button_Click(object sender, EventArgs e)

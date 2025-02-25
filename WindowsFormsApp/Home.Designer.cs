@@ -37,11 +37,9 @@ namespace WindowsFormsApp
             this.search_button = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
             this.favorite_words_panel = new System.Windows.Forms.Panel();
-            this.favorite_words_box = new System.Windows.Forms.TextBox();
             this.favorite_words_label = new System.Windows.Forms.TextBox();
             this.light_dark_mode_button = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
-            this.favorite_words_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // home_button
@@ -105,23 +103,11 @@ namespace WindowsFormsApp
             // favorite_words_panel
             // 
             this.favorite_words_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.favorite_words_panel.Controls.Add(this.favorite_words_box);
             this.favorite_words_panel.Location = new System.Drawing.Point(41, 196);
             this.favorite_words_panel.Name = "favorite_words_panel";
             this.favorite_words_panel.Size = new System.Drawing.Size(708, 269);
             this.favorite_words_panel.TabIndex = 5;
             this.favorite_words_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.favorite_words_panel_Paint);
-            // 
-            // favorite_words_box
-            // 
-            this.favorite_words_box.Enabled = false;
-            this.favorite_words_box.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.favorite_words_box.Location = new System.Drawing.Point(-1, -1);
-            this.favorite_words_box.Multiline = true;
-            this.favorite_words_box.Name = "favorite_words_box";
-            this.favorite_words_box.Size = new System.Drawing.Size(708, 269);
-            this.favorite_words_box.TabIndex = 0;
-            this.favorite_words_box.TextChanged += new System.EventHandler(this.favorite_words_box_TextChanged);
             // 
             // favorite_words_label
             // 
@@ -160,8 +146,6 @@ namespace WindowsFormsApp
             this.Name = "Home";
             this.Text = "Home";
             this.top_panel.ResumeLayout(false);
-            this.favorite_words_panel.ResumeLayout(false);
-            this.favorite_words_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,7 +160,6 @@ namespace WindowsFormsApp
         private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.Panel favorite_words_panel;
         private System.Windows.Forms.TextBox favorite_words_label;
-        private System.Windows.Forms.TextBox favorite_words_box;
         private Button light_dark_mode_button;
     }
 }
