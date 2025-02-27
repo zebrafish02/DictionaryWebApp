@@ -42,7 +42,7 @@ namespace WindowsFormsApp
                 top_panel.BackColor = Color.FromArgb(180, 180, 180);
                 history_box.BackColor = Color.FromArgb(245, 245, 245);
                 history_box.ForeColor = Color.FromArgb(0, 0, 0);
-                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\lightmode.png");
+                light_dark_mode_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/lightmode.png"));
             }
             else
             {
@@ -50,7 +50,7 @@ namespace WindowsFormsApp
                 top_panel.BackColor = Color.FromArgb(60, 60, 60);
                 history_box.BackColor = Color.FromArgb(120, 120, 120);
                 history_box.ForeColor = Color.FromArgb(255, 255, 255);
-                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\darkmode.png");
+                light_dark_mode_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/darkmode.png"));
             }
         }
 

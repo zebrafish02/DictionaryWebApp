@@ -27,10 +27,10 @@ namespace WindowsFormsApp
             defword = word;
             if (FavoriteEntry.ContainsWord(word))
             {                
-                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartFilled.png");
+                favorite_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/heartFilled.png"));
             } else
             {
-                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");
+                favorite_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/heartUnfilled.png"));
             }
             LoadColors();
 
@@ -75,7 +75,7 @@ namespace WindowsFormsApp
             {
                 FavoriteEntry.AddFavWord(defword);
                 //image changing from stack overflow
-                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartFilled.png");
+                favorite_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets\heartFilled.png"));
             }
             else if (FavoriteEntry.Count() >= 12)
             {
@@ -84,7 +84,7 @@ namespace WindowsFormsApp
             else
             {
                 FavoriteEntry.RemoveFavWord(defword);
-                favorite_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\heartUnfilled.png");
+                favorite_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/heartUnfilled.png"));
             }
             
         }
@@ -128,7 +128,7 @@ namespace WindowsFormsApp
                 word_box.ForeColor = Color.FromArgb(0, 0, 0);
                 definition_box.BackColor = Color.FromArgb(245, 245, 245);
                 definition_box.ForeColor = Color.FromArgb(0, 0, 0);
-                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\lightmode.png");
+                light_dark_mode_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/lightmode.png"));
             }
             else
             {
@@ -139,7 +139,7 @@ namespace WindowsFormsApp
                 word_box.ForeColor = Color.FromArgb(255, 255, 255);
                 definition_box.BackColor = Color.FromArgb(160, 160, 160);
                 definition_box.ForeColor = Color.FromArgb(255, 255, 255);
-                light_dark_mode_button.Image = Image.FromFile(@"C:\__Students\Liu\DictionaryWebApp\darkmode.png");
+                light_dark_mode_button.Image = Image.FromFile(Utilities.ComputePath(@"Assets/darkmode.png"));
             }
         }
 
