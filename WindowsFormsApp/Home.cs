@@ -80,7 +80,7 @@ namespace WindowsFormsApp
         private void search_button_Click(object sender, EventArgs e)
         {
             HistoryEntry.AddEntry(search_box.Text, DateTime.Now);
-            Definition def1 = new Definition(search_box.Text);
+            Definition def1 = new Definition(search_box.Text, urbanDictionary.Checked);
             Hide();
             def1.ShowDialog();
             Close();

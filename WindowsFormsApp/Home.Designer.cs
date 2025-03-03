@@ -39,6 +39,7 @@ namespace WindowsFormsApp
             this.favorite_words_panel = new System.Windows.Forms.Panel();
             this.favorite_words_label = new System.Windows.Forms.TextBox();
             this.light_dark_mode_button = new System.Windows.Forms.Button();
+            this.urbanDictionary = new System.Windows.Forms.CheckBox();
             this.top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@ namespace WindowsFormsApp
             // favorite_words_panel
             // 
             this.favorite_words_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.favorite_words_panel.Location = new System.Drawing.Point(41, 196);
+            this.favorite_words_panel.Location = new System.Drawing.Point(41, 227);
             this.favorite_words_panel.Name = "favorite_words_panel";
             this.favorite_words_panel.Size = new System.Drawing.Size(708, 269);
             this.favorite_words_panel.TabIndex = 5;
@@ -114,7 +115,7 @@ namespace WindowsFormsApp
             this.favorite_words_label.Enabled = false;
             this.favorite_words_label.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.favorite_words_label.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.favorite_words_label.Location = new System.Drawing.Point(41, 162);
+            this.favorite_words_label.Location = new System.Drawing.Point(41, 193);
             this.favorite_words_label.Name = "favorite_words_label";
             this.favorite_words_label.Size = new System.Drawing.Size(708, 34);
             this.favorite_words_label.TabIndex = 0;
@@ -131,11 +132,22 @@ namespace WindowsFormsApp
             this.light_dark_mode_button.UseVisualStyleBackColor = true;
             this.light_dark_mode_button.Click += new System.EventHandler(this.light_dark_mode_button_Click);
             // 
+            // urbanDictionary
+            // 
+            this.urbanDictionary.AutoSize = true;
+            this.urbanDictionary.Location = new System.Drawing.Point(160, 143);
+            this.urbanDictionary.Name = "urbanDictionary";
+            this.urbanDictionary.Size = new System.Drawing.Size(105, 17);
+            this.urbanDictionary.TabIndex = 7;
+            this.urbanDictionary.Text = "Urban Dictionary";
+            this.urbanDictionary.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.urbanDictionary);
             this.Controls.Add(this.light_dark_mode_button);
             this.Controls.Add(this.favorite_words_label);
             this.Controls.Add(this.favorite_words_panel);
@@ -161,6 +173,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Panel favorite_words_panel;
         private System.Windows.Forms.TextBox favorite_words_label;
         private Button light_dark_mode_button;
+        private CheckBox urbanDictionary;
     }
 }
 

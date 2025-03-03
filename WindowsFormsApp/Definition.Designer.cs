@@ -39,6 +39,7 @@
             this.word_box = new System.Windows.Forms.TextBox();
             this.favorite_button = new System.Windows.Forms.Button();
             this.light_dark_mode_button = new System.Windows.Forms.Button();
+            this.urbanDictionary = new System.Windows.Forms.CheckBox();
             this.top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,13 +90,13 @@
             this.definition_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.definition_box.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.definition_box.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.definition_box.Location = new System.Drawing.Point(41, 216);
+            this.definition_box.Location = new System.Drawing.Point(41, 223);
             this.definition_box.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.definition_box.Multiline = true;
             this.definition_box.Name = "definition_box";
             this.definition_box.ReadOnly = true;
             this.definition_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.definition_box.Size = new System.Drawing.Size(708, 313);
+            this.definition_box.Size = new System.Drawing.Size(708, 286);
             this.definition_box.TabIndex = 8;
             // 
             // search_button
@@ -126,7 +127,7 @@
             this.word_box.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.word_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.word_box.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.word_box.Location = new System.Drawing.Point(41, 164);
+            this.word_box.Location = new System.Drawing.Point(41, 171);
             this.word_box.Name = "word_box";
             this.word_box.ReadOnly = true;
             this.word_box.Size = new System.Drawing.Size(708, 28);
@@ -135,7 +136,7 @@
             // favorite_button
             // 
             this.favorite_button.Image = ((System.Drawing.Image)(resources.GetObject("favorite_button.Image")));
-            this.favorite_button.Location = new System.Drawing.Point(715, 158);
+            this.favorite_button.Location = new System.Drawing.Point(715, 165);
             this.favorite_button.Name = "favorite_button";
             this.favorite_button.Size = new System.Drawing.Size(34, 34);
             this.favorite_button.TabIndex = 7;
@@ -152,11 +153,22 @@
             this.light_dark_mode_button.UseVisualStyleBackColor = true;
             this.light_dark_mode_button.Click += new System.EventHandler(this.light_dark_mode_button_Click);
             // 
+            // urbanDictionary
+            // 
+            this.urbanDictionary.AutoSize = true;
+            this.urbanDictionary.Location = new System.Drawing.Point(160, 141);
+            this.urbanDictionary.Name = "urbanDictionary";
+            this.urbanDictionary.Size = new System.Drawing.Size(105, 17);
+            this.urbanDictionary.TabIndex = 10;
+            this.urbanDictionary.Text = "Urban Dictionary";
+            this.urbanDictionary.UseVisualStyleBackColor = true;
+            // 
             // Definition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.urbanDictionary);
             this.Controls.Add(this.light_dark_mode_button);
             this.Controls.Add(this.favorite_button);
             this.Controls.Add(this.definition_box);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button favorite_button;
         private System.Windows.Forms.TextBox definition_box;
         private System.Windows.Forms.Button light_dark_mode_button;
+        private System.Windows.Forms.CheckBox urbanDictionary;
     }
 }

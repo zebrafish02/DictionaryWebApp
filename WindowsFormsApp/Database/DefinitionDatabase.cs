@@ -13,14 +13,28 @@ namespace Dictionary.Database
     {
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+        private const string UrbanDictionaryBaseUrl = "https://obscure-yodel-gvgg9px5rrqh9pwx-3000.app.github.dev/?defid=";
 
 
-        public async Task<List<WordDefinition>> GetDef(string word)
+        public async Task<WordDefinition[]> GetDef(string word, bool urbanDictionary)
         {
             try
             {
-                var response = await _httpClient.GetStringAsync($"{BaseUrl}{word.ToLower().Trim()}");
-                return JsonConvert.DeserializeObject<List<WordDefinition>>(response);
+                var response = await _httpClient.GetStringAsync($"{(urbanDictionary ? UrbanDictionaryBaseUrl : BaseUrl)}{word.ToLower().Trim()}");
+                return urbanDictionary ? new WordDefinition[] { new WordDefinition() { 
+                    Meanings = new List<Meaning>()
+                    {
+                        new Meaning()
+                        {
+                            Definitions = new List<Definition>() { 
+                                new Definition() { 
+                                    Text = response
+                                } 
+                            },
+                            PartOfSpeech = "Urban Dictionary"
+                        }
+                    }
+                } } : JsonConvert.DeserializeObject<WordDefinition[]>(response);
             }
             catch (HttpRequestException ex)
             {
