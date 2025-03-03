@@ -18,12 +18,13 @@ namespace WindowsFormsApp
         private readonly DefinitionDatabase definitionDatabase;
         private string defword;
 
-        public Definition(string word)
+        public Definition(string word, bool urbanDict = false)
         {
             InitializeComponent();
             this.search_box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_box_KeyDown);
             definitionDatabase = new DefinitionDatabase();
-            SearchWord(word);
+            this.urbanDictionary.Checked = urbanDict;
+            SearchWord(word, this.urbanDictionary.Checked);
             defword = word;
             if (FavoriteEntry.ContainsWord(word))
             {                
@@ -55,7 +56,7 @@ namespace WindowsFormsApp
         private void search_button_Click(object sender, EventArgs e)
         {
             HistoryEntry.AddEntry(search_box.Text, DateTime.Now);
-            Definition def1 = new Definition(search_box.Text);
+            Definition def1 = new Definition(search_box.Text, this.urbanDictionary.Checked);
             Hide();
             def1.ShowDialog();
             Close();
@@ -90,13 +91,13 @@ namespace WindowsFormsApp
         }
 
 
-        public async Task SearchWord(string word)
+        public async Task SearchWord(string word, bool urbanDictionary)
         {
 
             word_box.Text = word;
             try
             {
-                var results = await definitionDatabase.GetDef(word);
+                var results = await definitionDatabase.GetDef(word, urbanDictionary);
 
                 foreach (var wordDef in results)
                 {
