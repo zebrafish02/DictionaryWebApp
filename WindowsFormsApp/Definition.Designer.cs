@@ -32,7 +32,6 @@
             this.home_button = new System.Windows.Forms.Button();
             this.history_button = new System.Windows.Forms.Button();
             this.top_panel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.definition_box = new System.Windows.Forms.TextBox();
             this.search_button = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
@@ -70,20 +69,11 @@
             // top_panel
             // 
             this.top_panel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.top_panel.Controls.Add(this.button1);
+            this.top_panel.Controls.Add(this.history_button);
             this.top_panel.Location = new System.Drawing.Point(-2, -3);
             this.top_panel.Name = "top_panel";
             this.top_panel.Size = new System.Drawing.Size(799, 62);
             this.top_panel.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(735, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 35);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // definition_box
             // 
@@ -175,7 +165,6 @@
             this.Controls.Add(this.word_box);
             this.Controls.Add(this.search_box);
             this.Controls.Add(this.search_button);
-            this.Controls.Add(this.history_button);
             this.Controls.Add(this.home_button);
             this.Controls.Add(this.top_panel);
             this.Name = "Definition";
@@ -191,7 +180,6 @@
         private System.Windows.Forms.Button home_button;
         private System.Windows.Forms.Button history_button;
         private System.Windows.Forms.Panel top_panel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.TextBox word_box;
