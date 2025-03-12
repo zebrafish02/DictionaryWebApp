@@ -56,13 +56,8 @@ namespace WindowsFormsApp
 
         private void LoadHist()
         {
-            //Dictionary<string, DateTime> hist = HistoryEntry.GetHist();
             List<string> words = HistoryEntry.GetWords();
             List<DateTime> dateTimes = HistoryEntry.GetDateTimes();
-            //foreach (string word in hist.Keys)
-            //{
-            //    history_box.Text += word + "     " + hist[word] + "\r\n";
-            //}
             for (int i = 0; i < words.Count; i++)
             {
                 history_box.Text += words[i] + "      " + dateTimes[i] + "\r\n";
